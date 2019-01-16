@@ -1,2 +1,2 @@
 # Tuple
-A 2D Puzzle Platformer where two players are conjoined ingame and need to work together to make progress.
+(tuple) is a two player local co op game where the goal is to complete puzzles and progress in a 2D platforming environment. Both players are conjoined physically and virtually but also have independent controls. A custom stretch controller, each end held by one player, conjoins the players in physical space. Stretch and movement of the  controller correspond to virtual depiction of the players in digital space. For example, stretching each end of the controller several feet apart stretches the digital players’ conjoined body. The controller invites players to travel through physical space and incorporate movement of the entire body. 
