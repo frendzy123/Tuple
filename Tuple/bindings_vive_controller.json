@@ -1,5 +1,6 @@
 {
-   "app_key" : "application.generated.unity.steamvr.exe",
+   "alias_info" : {},
+   "app_key" : "application.generated.unity.tuple.exe",
    "bindings" : {
       "/actions/buggy" : {
          "sources" : [
@@ -110,10 +111,13 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/teleport"
+                     "output" : "/actions/default/in/touchpadclick"
+                  },
+                  "position" : {
+                     "output" : "/actions/default/in/touchpadposition"
                   }
                },
-               "mode" : "button",
+               "mode" : "trackpad",
                "path" : "/user/hand/left/input/trackpad"
             },
             {
@@ -169,10 +173,13 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/teleport"
+                     "output" : "/actions/default/in/touchpadclick"
+                  },
+                  "position" : {
+                     "output" : "/actions/default/in/touchpadposition"
                   }
                },
-               "mode" : "button",
+               "mode" : "trackpad",
                "path" : "/user/hand/right/input/trackpad"
             },
             {
@@ -252,5 +259,7 @@
    },
    "controller_type" : "vive_controller",
    "description" : "",
-   "name" : "vive_controller"
+   "name" : "vive_controller",
+   "options" : {},
+   "simulated_actions" : []
 }

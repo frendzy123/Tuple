@@ -36,6 +36,14 @@
       "requirement": "optional"
     },
     {
+      "name": "/actions/default/in/TouchpadPosition",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/TouchpadClick",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
