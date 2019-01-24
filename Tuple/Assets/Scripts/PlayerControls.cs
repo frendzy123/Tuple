@@ -8,6 +8,9 @@ public class PlayerControls : MonoBehaviour {
     public SteamVR_Action_Vector2 touchpadPos;
     public SteamVR_Action_Boolean touchpadClick;
 
+    Vector2 touchpadPosVal;
+    bool touchpadClickVal;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,14 +18,18 @@ public class PlayerControls : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (touchpadClick) {
-            if (touchpadPos.x > 0.5)
+        touchpadClickVal = touchpadClick.GetState(SteamVR_Input_Sources.RightHand);
+        touchpadPosVal = touchpadPos.GetAxis(SteamVR_Input_Sources.RightHand);
+
+        if (touchpadClickVal) {
+            if (touchpadPosVal.x > 0.5)
             {
-                Debug.Log("Right");
+                gameObject.transform.Translate(Vector3.right * 0.05fs);
             }
-            else if(touchpadPos.x <= 0.5){
-                Debug.Log("Left");
+            else if(touchpadPosVal.x <= 0.5){
+                gameObject.transform.Translate(Vector3.left * 0.05f);
             }
         }
 	}
 }
+
