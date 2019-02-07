@@ -1,35 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
 using Valve.VR;
 
 public class PlayerControls : MonoBehaviour {
+    public GameObject controller;
+    public float xMagnitude;
+    public float yMagnitude;
+    public bool grounded = false;
+    public float range;
+    public PlayerControls otherHead;
 
-    public SteamVR_Action_Vector2 touchpadPos;
-    public SteamVR_Action_Boolean touchpadClick;
+    Rigidbody2D rg2d;
+    float currentGroundPos = 0f;
+    float currentControllerPos;
 
-    Vector2 touchpadPosVal;
-    bool touchpadClickVal;
+    void Start() {
+        rg2d = gameObject.GetComponent<Rigidbody2D>();
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        touchpadClickVal = touchpadClick.GetState(SteamVR_Input_Sources.RightHand);
-        touchpadPosVal = touchpadPos.GetAxis(SteamVR_Input_Sources.RightHand);
-
-        if (touchpadClickVal) {
-            if (touchpadPosVal.x > 0.5)
-            {
-                gameObject.transform.Translate(Vector3.right * 0.05fs);
-            }
-            else if(touchpadPosVal.x <= 0.5){
-                gameObject.transform.Translate(Vector3.left * 0.05f);
-            }
+    void FixedUpdate() {
+        if (otherHead.grounded) {
+            float yPos = Mathf.Clamp(currentGroundPos + (controller.transform.position.y - currentControllerPos) * yMagnitude, currentGroundPos - range, currentGroundPos + range);
+            Vector2 newPos = new Vector2(controller.transform.position.x * xMagnitude, yPos);
+            rg2d.MovePosition(newPos);
         }
-	}
+    }
+
+    void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.tag == "Ground") {
+            grounded = true;
+            currentGroundPos = col.gameObject.transform.position.y + col.gameObject.GetComponent<Collider2D>().bounds.size.y;
+            currentControllerPos = controller.transform.position.y;
+            Debug.Log(currentGroundPos);
+        }
+    }
 }
 

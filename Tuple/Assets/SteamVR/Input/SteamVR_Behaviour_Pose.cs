@@ -14,6 +14,9 @@ namespace Valve.VR
     /// </summary>
     public class SteamVR_Behaviour_Pose : MonoBehaviour
     {
+
+        //public float scalingFactor;
+
         [SteamVR_DefaultAction("Pose")]
         public SteamVR_Action_Pose poseAction;
 
@@ -40,6 +43,8 @@ namespace Valve.VR
 
         /// <summary>This event will fire whenever the device's tracking state changes</summary>
         public SteamVR_Behaviour_PoseEvent onTrackingChanged;
+
+        public Rigidbody2D rb2d;
 
         protected int deviceIndex = -1;
 
@@ -162,12 +167,15 @@ namespace Valve.VR
             if (origin != null)
             {
                 transform.position = origin.transform.TransformPoint(poseAction.GetLocalPosition(inputSource));
-                transform.rotation = origin.rotation * poseAction.GetLocalRotation(inputSource);
+                //transform.rotation = origin.rotation * poseAction.GetLocalRotation(inputSource);
+                //rb2d.MovePosition(origin.transform.TransformPoint(poseAction.GetLocalPosition(inputSource)));
+
             }
             else
             {
                 transform.localPosition = poseAction.GetLocalPosition(inputSource);
-                transform.localRotation = poseAction.GetLocalRotation(inputSource);
+                //transform.localRotation = poseAction.GetLocalRotation(inputSource);
+                //rb2d.MovePosition(poseAction.GetLocalPosition(inputSource));
             }
 
             if (poseAction.GetChanged(inputSource))
