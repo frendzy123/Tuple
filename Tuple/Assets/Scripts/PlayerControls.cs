@@ -8,33 +8,70 @@ public class PlayerControls : MonoBehaviour {
     public GameObject controller;
     public float xMagnitude;
     public float yMagnitude;
-    public bool grounded = false;
-    public float range;
-    public PlayerControls otherHead;
+    public bool isInverted;
 
-    Rigidbody2D rg2d;
-    float currentGroundPos = 0f;
-    float currentControllerPos;
+    private float shiftX;
+    private float shiftY;
+
+    private float initialX;
+    private float initialY;
+
+    private float inversion = 1.0f;
+    private Rigidbody2D rg2d;
+
+    private int startFrame = 0;
+    private int endFrame = 10;
+
+    private float prevX = 0f;
+    private float prevY = 0f;
 
     void Start() {
         rg2d = gameObject.GetComponent<Rigidbody2D>();
+        initialX = rg2d.position.x;
+        initialY = rg2d.position.y;
     }
-
+/*
+    //confirmed working, inversion behavior not ideal
     void FixedUpdate() {
-        if (otherHead.grounded) {
-            float yPos = Mathf.Clamp(currentGroundPos + (controller.transform.position.y - currentControllerPos) * yMagnitude, currentGroundPos - range, currentGroundPos + range);
-            Vector2 newPos = new Vector2(controller.transform.position.x * xMagnitude, yPos);
-            rg2d.MovePosition(newPos);
+        if (startFrame < endFrame) {
+            startFrame += 1;
         }
-    }
+        else if (startFrame == endFrame) {
+            shiftX = controller.transform.position.x - initialX;
+            shiftY = controller.transform.position.y - initialY;
+            startFrame += 1;
+        }
 
-    void OnCollisionEnter2D(Collision2D col) {
-        if (col.gameObject.tag == "Ground") {
-            grounded = true;
-            currentGroundPos = col.gameObject.transform.position.y + col.gameObject.GetComponent<Collider2D>().bounds.size.y;
-            currentControllerPos = controller.transform.position.y;
-            Debug.Log(currentGroundPos);
+        if (isInverted == true) {
+            inversion = -1.0f;
         }
+        else {
+            inversion = 1.0f;
+        }
+
+        float scaledX = (controller.transform.position.x - shiftX - initialX) * xMagnitude; 
+        float scaledY = (controller.transform.position.y - shiftY - initialY) * yMagnitude;
+
+        Vector2 newPos = new Vector2(scaledX + initialX, scaledY + initialY);
+        rg2d.MovePosition(newPos);
+    }
+*/
+    //in progress, no centering and no inversion behavior
+    void FixedUpdate() {
+        if (isInverted == true) {
+            inversion = -1.0f;
+        }
+        else {
+            inversion = 1.0f;
+        }
+
+
+
+        float scaledX = inversion * (controller.transform.position.x - prevX) * xMagnitude; 
+        float scaledY = (controller.transform.position.y - prevY) * yMagnitude;
+
+        Vector2 newPos = new Vector2(scaledX - initialX, scaledY - initialY);
+        rg2d.MovePosition(newPos);
     }
 }
 
