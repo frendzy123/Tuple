@@ -9,6 +9,10 @@ public class PlayerControls : MonoBehaviour {
     public float xMagnitude;
     public float yMagnitude;
     public bool isInverted;
+    public float xMinClamp;
+    public float xMaxClamp;
+    public float yMinClamp;
+    public float yMaxClamp;
 
     private float shiftX;
     private float shiftY;
@@ -65,13 +69,30 @@ public class PlayerControls : MonoBehaviour {
             inversion = 1.0f;
         }
 
+        if (startFrame < endFrame)
+        {
+            startFrame += 1;
+        }
+        else if (startFrame == endFrame)
+        {
+            prevX = controller.transform.position.x;
+            prevY = controller.transform.position.y;
+            startFrame += 1;
+        }
+        else
+        {
+            float scaledX = inversion * (controller.transform.position.x - prevX) * xMagnitude;
+            float scaledY = (controller.transform.position.y - prevY) * yMagnitude;
 
+            Debug.Log(scaledX - initialX);
+            float newX = Mathf.Clamp(scaledX - initialX, xMinClamp, xMaxClamp);
+            float newY = Mathf.Clamp(scaledY - initialY, yMinClamp, yMaxClamp);
+            Debug.Log("NewX:" + newX);
+            Vector2 newPos = new Vector2(newX, newY);
+            rg2d.MovePosition(newPos);
+        }
 
-        float scaledX = inversion * (controller.transform.position.x - prevX) * xMagnitude; 
-        float scaledY = (controller.transform.position.y - prevY) * yMagnitude;
-
-        Vector2 newPos = new Vector2(scaledX - initialX, scaledY - initialY);
-        rg2d.MovePosition(newPos);
+        
     }
 }
 
