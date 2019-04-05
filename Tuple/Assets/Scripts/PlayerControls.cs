@@ -34,6 +34,13 @@ public class PlayerControls : MonoBehaviour {
         initialX = rg2d.position.x;
         initialY = rg2d.position.y;
     }
+
+    [ContextMenu("Set Up Chain")]
+    void SetUpChainEditor()
+    {
+        Debug.Log("xxxxxx");
+    }
+
 /*
     //confirmed working, inversion behavior not ideal
     void FixedUpdate() {
