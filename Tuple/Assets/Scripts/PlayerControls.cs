@@ -91,10 +91,8 @@ public class PlayerControls : MonoBehaviour {
             float scaledX = inversion * (controller.transform.position.x - prevX) * xMagnitude;
             float scaledY = (controller.transform.position.y - prevY) * yMagnitude;
 
-            Debug.Log(scaledX - initialX);
             float newX = Mathf.Clamp(scaledX - initialX, xMinClamp, xMaxClamp);
             float newY = Mathf.Clamp(scaledY - initialY, yMinClamp, yMaxClamp);
-            Debug.Log("NewX:" + newX);
             Vector2 newPos = new Vector2(newX, newY);
             rg2d.MovePosition(newPos);
         }
