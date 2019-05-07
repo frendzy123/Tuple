@@ -23,6 +23,7 @@ public class BodyLineRenderer : MonoBehaviour
     {
         _srcBody = this.GetComponentInParent<PlayerBody>();
         _lr = this.GetComponent<LineRenderer>();
+        _lr.sortingOrder = 3;
         _lr.positionCount = _srcBody.bodyControlsPoints.Count;
         _lr.numCornerVertices = _lrCornerSmoothness;
         _lr.numCapVertices = _lrCapSmoothness;
@@ -34,7 +35,8 @@ public class BodyLineRenderer : MonoBehaviour
     {
         for (int i = 0; i < _srcBody.bodyControlsPoints.Count; i++)
         {
-            _lr.SetPosition(i, _srcBody.bodyControlsPoints[i].transform.position);
+            Vector3 positions = _srcBody.bodyControlsPoints[i].transform.position;
+            _lr.SetPosition(i, new Vector3(positions.x, positions.y, 10));
         }
 
         AdjustLine();

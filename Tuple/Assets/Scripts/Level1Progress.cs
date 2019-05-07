@@ -5,35 +5,58 @@ using UnityEngine;
 
 public class Level1Progress : MonoBehaviour
 {
-    public GameObject _umbrella;
 
-    private Slider _slider;
-    private GameObject[] _umbrellas = new GameObject[2];
-    private bool _spawned1 = false;
-    private bool _spawned2 = false;
+    public DigitalRuby.RainMaker.RainScript2D _rainControl;
+    public SpriteRenderer _lightBackground;
+    public SpriteRenderer _lightFlowers;
+    public GameObject _umbrella;
+    public GameObject _umbrellaSpawn;
+    public float _rainIntensityRate;
+    public float _rainChangeRate;
+    public float _alphaChangeRate;
+    public float _dayChangeRate;
 
     // Start is called before the first frame update
     void Start()
     {
-        _slider = this.GetComponent<Slider>();
-        _umbrellas[0] = null;
-        _umbrellas[1] = null;
+        StartCoroutine("Fade");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_slider.value < 0.35f && _slider.value >= 0 && !_spawned1)
+    }
+
+    IEnumerator Fade()
+    {
+        if (_lightBackground.color.a <= 0)
         {
-            Vector3 position = new Vector3(0, 2.2742f, 0);
-            _umbrellas[0] = Instantiate(_umbrella, position, Quaternion.identity);
-            _spawned1 = true;
+
+            GameObject umbrella = Instantiate(_umbrella, _umbrellaSpawn.transform.position, Quaternion.identity);
+            umbrella.GetComponent<Rigidbody2D>().AddForce(new Vector3(450, -0.5f, 0));
+            StartCoroutine("Rain");
         }
-        else if (_slider.value < 0.65f && _slider.value >= 0.35f && !_spawned2)
+        else
         {
-            Vector3 position = new Vector3(0, 2.2742f, 0);
-            _umbrellas[1] = Instantiate(_umbrella, position, Quaternion.identity);
-            _spawned2 = true;
+            Color newColor = new Color(_lightBackground.color.r, _lightBackground.color.g, _lightBackground.color.b, _lightBackground.color.a - _alphaChangeRate);
+            _lightBackground.color = newColor;
+            _lightFlowers.color = newColor;
+            yield return new WaitForSeconds(_dayChangeRate);
+            StartCoroutine("Fade");
+        }
+    }
+
+    IEnumerator Rain()
+    {
+        if (_rainControl.RainIntensity >= 1)
+        {
+
+        }
+        else
+        {
+            _rainControl.RainIntensity += _rainIntensityRate;
+            yield return new WaitForSeconds(_rainChangeRate);
+            StartCoroutine("Rain");
         }
     }
 }
