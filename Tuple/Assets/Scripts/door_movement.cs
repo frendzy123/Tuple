@@ -30,7 +30,7 @@ public class door_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	_top_door.transform.position = Vector3.Lerp(_top_pos1, _top_pos2, (Mathf.Sin(speed * Time.time) + 1.0f) / 2.0f);
-    	_bottom_door.transform.position = Vector3.Lerp(_bottom_pos1, _bottom_pos2, (Mathf.Sin(speed * Time.time) + 1.0f) / 2.0f);
+		_top_door.transform.position = Vector3.Lerp(_top_pos1, _top_pos2, (-1.0f * Mathf.Cos(speed * Time.time) + 1.0f) / 2.0f);
+		_bottom_door.transform.position = Vector3.Lerp(_bottom_pos1, _bottom_pos2, (-1.0f * Mathf.Cos(speed * Time.time) + 1.0f) / 2.0f);
     }
 }
