@@ -1,5 +1,119 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &876793901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 876793902}
+  - component: {fileID: 876793903}
+  m_Layer: 0
+  m_Name: DetectionZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &876793902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876793901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5883319597219204374}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &876793903
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876793901}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 4.287317}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 7.8546343}
+  m_EdgeRadius: 0
+--- !u!1 &933204707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933204708}
+  - component: {fileID: 933204709}
+  m_Layer: 0
+  m_Name: DetectionZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &933204708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933204707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5883319598325055439}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &933204709
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933204707}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 4.222936}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 7.725875}
+  m_EdgeRadius: 0
 --- !u!1 &5883319596610755095
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5883319596610755095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 5883319598551164731}
@@ -87,11 +201,11 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 3
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -161,7 +275,7 @@ GameObject:
   - component: {fileID: 5883319596714169279}
   m_Layer: 8
   m_Name: chick (9)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +449,7 @@ GameObject:
   - component: {fileID: 5883319597064128954}
   m_Layer: 8
   m_Name: chick (5)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,6 +700,7 @@ GameObject:
   - component: {fileID: 5883319597219204375}
   - component: {fileID: 5883319597219204371}
   - component: {fileID: 5883319597219204370}
+  - component: {fileID: 1865598290}
   m_Layer: 0
   m_Name: RightHead
   m_TagString: Player
@@ -602,8 +717,9 @@ Transform:
   m_GameObject: {fileID: 5883319597219204377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.73, y: -0.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_Children:
+  - {fileID: 876793902}
   m_Father: {fileID: 5883319598551164731}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -643,8 +759,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a1383e51c9bb5d944bb02526d1354ea1, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: ba53383938e93224f8369e099246ee33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -668,9 +784,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.12546927, y: 0.015683651}
   serializedVersion: 2
-  m_Radius: 0.645
+  m_Radius: 0.9743566
 --- !u!50 &5883319597219204375
 Rigidbody2D:
   serializedVersion: 4
@@ -732,6 +848,21 @@ SpringJoint2D:
   m_Distance: 1.5000001
   m_DampingRatio: 1
   m_Frequency: 0
+--- !u!114 &1865598290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5883319597219204377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee90e25284d6b849ad2db0e74617121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagFilter:
+  - SafeCover
+  objectsInTriggerZone: []
 --- !u!1 &5883319597276110345
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +880,7 @@ GameObject:
   - component: {fileID: 5883319597276110336}
   m_Layer: 8
   m_Name: chick
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -923,7 +1054,7 @@ GameObject:
   - component: {fileID: 5883319597279333373}
   m_Layer: 8
   m_Name: chick (3)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1097,7 +1228,7 @@ GameObject:
   - component: {fileID: 5883319597827337301}
   m_Layer: 8
   m_Name: chick (2)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1271,7 +1402,7 @@ GameObject:
   - component: {fileID: 5883319597836358165}
   m_Layer: 8
   m_Name: chick (10)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1489,7 +1620,7 @@ GameObject:
   - component: {fileID: 5883319597858357050}
   m_Layer: 8
   m_Name: chick (8)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1663,7 +1794,7 @@ GameObject:
   - component: {fileID: 5883319598048412798}
   m_Layer: 8
   m_Name: chick (4)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2088,7 +2219,7 @@ GameObject:
   - component: {fileID: 5883319598264979826}
   m_Layer: 8
   m_Name: chick (1)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2259,6 +2390,7 @@ GameObject:
   - component: {fileID: 5883319598325055436}
   - component: {fileID: 5883319598325055432}
   - component: {fileID: 5883319598325055435}
+  - component: {fileID: 494579689}
   m_Layer: 0
   m_Name: LeftHead
   m_TagString: Player
@@ -2275,8 +2407,9 @@ Transform:
   m_GameObject: {fileID: 5883319598325055438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.55, y: 0.03, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_Children:
+  - {fileID: 933204708}
   m_Father: {fileID: 5883319598551164731}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2316,8 +2449,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 821bbdd276ab28643b5b463faa0e77f7, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: 50e3572674dcffa4fbab0e1fc6ae7c65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2341,9 +2474,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.11762738, y: 0.00000023841858}
   serializedVersion: 2
-  m_Radius: 0.725
+  m_Radius: 0.9837804
 --- !u!50 &5883319598325055436
 Rigidbody2D:
   serializedVersion: 4
@@ -2405,6 +2538,21 @@ SpringJoint2D:
   m_Distance: 1.4999999
   m_DampingRatio: 1
   m_Frequency: 0
+--- !u!114 &494579689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5883319598325055438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee90e25284d6b849ad2db0e74617121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagFilter:
+  - SafeCover
+  objectsInTriggerZone: []
 --- !u!1 &5883319598328199494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2649,7 @@ GameObject:
   - component: {fileID: 5883319598430367237}
   m_Layer: 8
   m_Name: chick (6)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2745,7 +2893,7 @@ GameObject:
   - component: {fileID: 5883319598722316475}
   m_Layer: 8
   m_Name: chick (7)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

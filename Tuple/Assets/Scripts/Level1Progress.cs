@@ -54,7 +54,17 @@ public class Level1Progress : MonoBehaviour
         if (_rainControl.RainIntensity >= 1)
         {
 
+            yield return new WaitForSeconds(_dayChangeRate);
+            time += _dayChangeRate;
 
+            if (time >= 30)
+            {
+                StartCoroutine("FadeIn");
+            }
+            else
+            {
+                StartCoroutine("Rain");
+            }
         }
         else
         {
@@ -68,18 +78,15 @@ public class Level1Progress : MonoBehaviour
     {
         if (_lightBackground.color.a >= 1)
         {
-
-            GameObject umbrella = Instantiate(_umbrella, _umbrellaSpawn.transform.position, Quaternion.identity);
-            umbrella.GetComponent<Rigidbody2D>().AddForce(new Vector3(450, -0.5f, 0));
-            StartCoroutine("Rain");
         }
         else
         {
-            Color newColor = new Color(_lightBackground.color.r, _lightBackground.color.g, _lightBackground.color.b, _lightBackground.color.a - _alphaChangeRate);
+            Color newColor = new Color(_lightBackground.color.r, _lightBackground.color.g, _lightBackground.color.b, _lightBackground.color.a + _alphaChangeRate);
+            _rainControl.RainIntensity -= _rainIntensityRate;
             _lightBackground.color = newColor;
             _lightFlowers.color = newColor;
             yield return new WaitForSeconds(_dayChangeRate);
-            StartCoroutine("Fade");
+            StartCoroutine("FadeIn");
         }
     }
 }

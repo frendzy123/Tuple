@@ -36,7 +36,7 @@ public class BodyLineRenderer : MonoBehaviour
         for (int i = 0; i < _srcBody.bodyControlsPoints.Count; i++)
         {
             Vector3 positions = _srcBody.bodyControlsPoints[i].transform.position;
-            _lr.SetPosition(i, new Vector3(positions.x, positions.y, 10));
+            _lr.SetPosition(i, new Vector3(positions.x, positions.y, 0));
         }
 
         AdjustLine();
