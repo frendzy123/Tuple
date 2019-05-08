@@ -93,6 +93,7 @@ namespace DigitalRuby.RainMaker
                 {
                     WindZone.transform.Translate(0.0f, WindZone.radius, 0.0f);
                 }
+				/*
                 if (nextWindTime < Time.time)
                 {
                     WindZone.windMain = UnityEngine.Random.Range(WindSpeedRange.x, WindSpeedRange.y);
@@ -109,6 +110,7 @@ namespace DigitalRuby.RainMaker
                     nextWindTime = Time.time + UnityEngine.Random.Range(WindChangeInterval.x, WindChangeInterval.y);
                     audioSourceWind.Play((WindZone.windMain / WindSpeedRange.z) * WindSoundVolumeModifier);
                 }
+				*/
             }
             else
             {

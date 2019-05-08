@@ -1222,6 +1222,22 @@ PrefabInstance:
       propertyPath: RainMistThreshold
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: WindSpeedRange.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: WindSpeedRange.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: FollowCamera
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 465656, guid: b046278bb9b6e104790392b566667ba5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1282,9 +1298,29 @@ PrefabInstance:
       propertyPath: m_WindPulseMagnitude
       value: -4.37
       objectReference: {fileID: 0}
+    - target: {fileID: 18238810, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_WindMain
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 18238810, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_WindTurbulence
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 19943526, guid: b046278bb9b6e104790392b566667ba5, type: 3}
       propertyPath: m_MaxParticleSize
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 471218, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 471218, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 471218, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90.00001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b046278bb9b6e104790392b566667ba5, type: 3}
@@ -1455,6 +1491,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488258508608872731, guid: 65d2c84e7468f4c488c4518f540ef66b,
+        type: 3}
+      propertyPath: orthographic size
+      value: 4.375644
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65d2c84e7468f4c488c4518f540ef66b, type: 3}
