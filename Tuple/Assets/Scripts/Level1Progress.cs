@@ -16,6 +16,9 @@ public class Level1Progress : MonoBehaviour
     public float _alphaChangeRate;
     public float _dayChangeRate;
 
+
+    private float time = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,12 +54,32 @@ public class Level1Progress : MonoBehaviour
         if (_rainControl.RainIntensity >= 1)
         {
 
+
         }
         else
         {
             _rainControl.RainIntensity += _rainIntensityRate;
             yield return new WaitForSeconds(_rainChangeRate);
             StartCoroutine("Rain");
+        }
+    }
+
+    IEnumerator FadeIn()
+    {
+        if (_lightBackground.color.a >= 1)
+        {
+
+            GameObject umbrella = Instantiate(_umbrella, _umbrellaSpawn.transform.position, Quaternion.identity);
+            umbrella.GetComponent<Rigidbody2D>().AddForce(new Vector3(450, -0.5f, 0));
+            StartCoroutine("Rain");
+        }
+        else
+        {
+            Color newColor = new Color(_lightBackground.color.r, _lightBackground.color.g, _lightBackground.color.b, _lightBackground.color.a - _alphaChangeRate);
+            _lightBackground.color = newColor;
+            _lightFlowers.color = newColor;
+            yield return new WaitForSeconds(_dayChangeRate);
+            StartCoroutine("Fade");
         }
     }
 }
