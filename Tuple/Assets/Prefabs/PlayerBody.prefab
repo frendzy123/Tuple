@@ -161,10 +161,10 @@ MonoBehaviour:
   _rightHeads: {fileID: 5883319597219204371}
   _leftHeads: {fileID: 5883319598325055432}
   _startStretching: 4.5
-  _stretchSideMultiplier: 0.01
-  _stretchCenterMultiplier: 0.02
-  _lrCornerSmoothness: 4
-  _lrCapSmoothness: 10
+  _stretchSideMultiplier: 0.02
+  _stretchCenterMultiplier: 0.03
+  _lrCornerSmoothness: 50
+  _lrCapSmoothness: 20
 --- !u!120 &5883319596610755093
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -700,7 +700,6 @@ GameObject:
   - component: {fileID: 5883319597219204375}
   - component: {fileID: 5883319597219204371}
   - component: {fileID: 5883319597219204370}
-  - component: {fileID: 1865598290}
   m_Layer: 0
   m_Name: RightHead
   m_TagString: Player
@@ -823,11 +822,12 @@ MonoBehaviour:
   controller: {fileID: 0}
   xMagnitude: 9
   yMagnitude: 4
-  isInverted: 0
+  isInverted: 1
   xMinClamp: -7
   xMaxClamp: 7
   yMinClamp: -1
   yMaxClamp: 6
+  hand: 2
 --- !u!231 &5883319597219204370
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -848,21 +848,6 @@ SpringJoint2D:
   m_Distance: 1.5000001
   m_DampingRatio: 1
   m_Frequency: 0
---- !u!114 &1865598290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5883319597219204377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ee90e25284d6b849ad2db0e74617121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagFilter:
-  - SafeCover
-  objectsInTriggerZone: []
 --- !u!1 &5883319597276110345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2390,7 +2375,6 @@ GameObject:
   - component: {fileID: 5883319598325055436}
   - component: {fileID: 5883319598325055432}
   - component: {fileID: 5883319598325055435}
-  - component: {fileID: 494579689}
   m_Layer: 0
   m_Name: LeftHead
   m_TagString: Player
@@ -2513,11 +2497,12 @@ MonoBehaviour:
   controller: {fileID: 0}
   xMagnitude: 9
   yMagnitude: 4
-  isInverted: 0
+  isInverted: 1
   xMinClamp: -7
   xMaxClamp: 7
   yMinClamp: -1
   yMaxClamp: 6
+  hand: 1
 --- !u!231 &5883319598325055435
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -2538,21 +2523,6 @@ SpringJoint2D:
   m_Distance: 1.4999999
   m_DampingRatio: 1
   m_Frequency: 0
---- !u!114 &494579689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5883319598325055438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ee90e25284d6b849ad2db0e74617121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagFilter:
-  - SafeCover
-  objectsInTriggerZone: []
 --- !u!1 &5883319598328199494
 GameObject:
   m_ObjectHideFlags: 0

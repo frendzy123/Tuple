@@ -14,6 +14,8 @@ public class PlayerControls : MonoBehaviour {
     public float yMinClamp;
     public float yMaxClamp;
 
+    public SteamVR_Input_Sources hand;
+
     private float shiftX;
     private float shiftY;
 
@@ -96,8 +98,10 @@ public class PlayerControls : MonoBehaviour {
             Vector2 newPos = new Vector2(newX, newY);
             rg2d.MovePosition(newPos);
         }
+    }
 
-        
+    public bool IsGrabbing() {
+        return SteamVR_Actions._default.GrabPinch.GetState(hand);
     }
 }
 

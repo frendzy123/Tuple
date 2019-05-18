@@ -13,10 +13,10 @@ public class BodyLineRenderer : MonoBehaviour
     public float _stretchSideMultiplier;
     public float _stretchCenterMultiplier;
 
-    [Range(0, 10)]
+    [Range(0, 50)]
     public int _lrCornerSmoothness;
 
-    [Range(0 , 10)]
+    [Range(0 , 50)]
     public int _lrCapSmoothness;
 
     void Awake()
@@ -40,6 +40,8 @@ public class BodyLineRenderer : MonoBehaviour
         }
 
         AdjustLine();
+        _lr.numCornerVertices = _lrCornerSmoothness;
+        _lr.numCapVertices = _lrCapSmoothness;
     }
 
     // Adjust the width of different segments of the line to give impression of tension and strech.
@@ -60,7 +62,7 @@ public class BodyLineRenderer : MonoBehaviour
             curve.AddKey(1.0f, 0.4f);
 
             _lr.widthCurve = curve;
-            _lr.widthMultiplier = 1.0f;
+            _lr.widthMultiplier = 3.0f;
         }
     }
 }

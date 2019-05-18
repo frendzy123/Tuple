@@ -36,7 +36,7 @@ public class Level1Progress : MonoBehaviour
         {
 
             GameObject umbrella = Instantiate(_umbrella, _umbrellaSpawn.transform.position, Quaternion.identity);
-            umbrella.GetComponent<Rigidbody2D>().AddForce(new Vector3(450, -0.5f, 0));
+            umbrella.GetComponent<Rigidbody2D>().AddForce(new Vector3(650, -0.5f, 0));
             StartCoroutine("Rain");
         }
         else

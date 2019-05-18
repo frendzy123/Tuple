@@ -7,13 +7,13 @@ public class Level2Lights : MonoBehaviour
 
     public GameObject _leftHead;
     public GameObject _rightHead;
+    public int _maxIntensity;
 
     private Light _pointLight;
 
     // Start is called before the first frame update
     void Start()
     {
-
         _pointLight = this.GetComponent<Light>();
     }
 
@@ -26,7 +26,7 @@ public class Level2Lights : MonoBehaviour
 
         float minDistance = Mathf.Min(leftHeadDistance, rightHeadDistance);
 
-        _pointLight.intensity = Mathf.Clamp(5 / minDistance, 0, 5);
+        _pointLight.intensity = Mathf.Clamp(_maxIntensity / minDistance, 0, _maxIntensity);
 
     }
 }
