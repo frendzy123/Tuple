@@ -25,4 +25,8 @@ public class terminal : MonoBehaviour
 
         _pointLight.intensity = Mathf.Clamp(_maxIntensity / minDistance, 0, _maxIntensity);
     }
+
+    //if different colored aura lights implemented, need public static int to store current state for terminals (and heads?)
+    //need Lights with preset colors and maxintensities
+    //vibration to indicate wrong color if latched on during color change
 }
