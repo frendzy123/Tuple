@@ -1235,6 +1235,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Umbrella
       objectReference: {fileID: 0}
+    - target: {fileID: 5885495022688055716, guid: 695be4f2f919e964c969e1dcc6e04442,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5885495022688055736, guid: 695be4f2f919e964c969e1dcc6e04442,
         type: 3}
       propertyPath: m_LocalPosition.x
