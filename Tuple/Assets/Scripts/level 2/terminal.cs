@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class terminal : MonoBehaviour
 {
+    public GameObject _leftHead;
+    public GameObject _rightHead;
+    public float _maxIntensity;
+
+    private Light _pointLight;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _pointLight = this.GetComponent<Light>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        float leftHeadDistance = Vector3.Distance(_leftHead.transform.position, this.gameObject.transform.position);
+        float rightHeadDistance = Vector3.Distance(_rightHead.transform.position, this.gameObject.transform.position);
+
+        float minDistance = Mathf.Min(leftHeadDistance, rightHeadDistance);
+
+        _pointLight.intensity = Mathf.Clamp(_maxIntensity / minDistance, 0, _maxIntensity);
     }
 }
