@@ -17,6 +17,7 @@ public class BodyChainColliders : MonoBehaviour
         {
             GameObject boxColObject = new GameObject("chain-box-" + i);
             boxColObject.transform.parent = this.transform;
+            boxColObject.tag = "Body";
             BoxCollider2D collider = boxColObject.AddComponent<BoxCollider2D>();
             boxColObject.layer = LayerMask.NameToLayer("body_links");
             //collider.enabled = false;
