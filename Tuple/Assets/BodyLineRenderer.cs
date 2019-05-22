@@ -62,7 +62,7 @@ public class BodyLineRenderer : MonoBehaviour
             curve.AddKey(1.0f, 0.4f);
 
             _lr.widthCurve = curve;
-            _lr.widthMultiplier = 3.0f;
+            _lr.widthMultiplier = 2.25f;
         }
     }
 }
