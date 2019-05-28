@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class SceneTransition : MonoBehaviour
 {
-    public Scene _nextLevel;
+    public string _nextLevel;
+    public Animator _anim;
 
     private bool _leftHeadReady = false;
     private bool _rightHeadReady = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +39,7 @@ public class SceneTransition : MonoBehaviour
 
         if (_rightHeadReady && _leftHeadReady)
         {
-            SceneManager.LoadScene(_nextLevel.path);
+            StartCoroutine("Transition");
         }
     }
 
@@ -51,5 +54,12 @@ public class SceneTransition : MonoBehaviour
         {
             _leftHeadReady = false;
         }
+    }
+
+    IEnumerator Transition()
+    {
+        _anim.SetBool("ExitLevel", true);
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene(_nextLevel);
     }
 }
