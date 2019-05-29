@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SafeCover
   - Body
+  - interactable
   layers:
   - Default
   - TransparentFX

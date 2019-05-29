@@ -11,6 +11,7 @@ public class Level1Progress : MonoBehaviour
     public SpriteRenderer _lightFlowers;
     public GameObject _umbrella;
     public GameObject _umbrellaSpawn;
+    public GameObject _levelTransition;
     public float _rainIntensityRate;
     public float _rainChangeRate;
     public float _alphaChangeRate;
@@ -78,6 +79,8 @@ public class Level1Progress : MonoBehaviour
     {
         if (_lightBackground.color.a >= 1)
         {
+
+            _levelTransition.SetActive(true);
         }
         else
         {
