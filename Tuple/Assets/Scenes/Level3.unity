@@ -292,11 +292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d854a062f2d60f4e9292b00e5b1eb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
-  flickerIntervalSec: 30
-  elapsedTime: 0
-  flickerwait: 2
-  flickerpause: 8
+  lightRotationSpeed: 0.01
+  flickerIntervalSec: 20
+  flickerStutterInterval: 0.1
+  flickerPauseInterval: 7
+  isFlickerActive: 0
 --- !u!108 &925073379
 Light:
   m_ObjectHideFlags: 0
