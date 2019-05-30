@@ -15,7 +15,7 @@ public class light_movement : MonoBehaviour
 	public int flickerIntervalSec = 7;
 	public float flickerStutterInterval = 0.1f;
 	public float flickerPauseInterval = 7f;
-	public bool isFlickerActive = false;
+	public static bool isFlickerActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +50,8 @@ public class light_movement : MonoBehaviour
 	    	}
     	}
     }
+
+
 
     IEnumerator flicker() {
     	isFlickerActive = true;
@@ -92,6 +94,11 @@ public class light_movement : MonoBehaviour
     	lightComp.enabled = true;
     	yield return new WaitForSecondsRealtime(flickerStutterInterval);
 
+		lightComp.enabled = false;
+		yield return new WaitForSecondsRealtime(flickerStutterInterval);
+		lightComp.enabled = true;
+
+		yield return new WaitForSecondsRealtime(flickerStutterInterval);
     	lightComp.enabled = false;
     	yield return new WaitForSecondsRealtime(flickerStutterInterval);
 
