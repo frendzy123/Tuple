@@ -10,13 +10,10 @@ public class dispense : MonoBehaviour
     public int _lowerAngle;
 
     private bool _left = false;
-    private Transform _directionPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        _directionPoint = this.gameObject.GetComponentInChildren<Transform>();
     }
 
     // Update is called once per frame
@@ -33,7 +30,8 @@ public class dispense : MonoBehaviour
 
             this.gameObject.transform.Rotate(Vector3.forward, 0.5f);
         }
-        else {
+        else
+        {
             if (this.gameObject.transform.rotation.eulerAngles.z < _lowerAngle) {
                 _left = true;
             }
@@ -42,11 +40,27 @@ public class dispense : MonoBehaviour
         }
 
         if (Random.Range(0f, 1f) > 0.99) {
-            Vector3 direction = _directionPoint.position.normalized;
-            Debug.Log(direction);
+            float xMag = 1f;
+            float yMag = 1f;
+            float angle = 0f;
+
+            if (this.gameObject.transform.rotation.eulerAngles.z >= 180)
+            {
+                // xMag = 1f;
+                // yMag = -1f;
+                angle = ((this.gameObject.transform.rotation.eulerAngles.z - 180) * Mathf.PI) / 180;
+            }
+            else {
+               // xMag = -1f;
+               // yMag = 1f;
+                angle = ((180 - this.gameObject.transform.rotation.eulerAngles.z) * Mathf.PI) / 180;
+            }
+            
+            Debug.Log(angle);
+            Vector3 direction = new Vector3(xMag*Mathf.Cos(angle), yMag*Mathf.Sin(angle), 0);
             GameObject tempJellybean = Instantiate(_jellybean, this.gameObject.transform.position, Quaternion.identity);
             Rigidbody2D rb2d = tempJellybean.GetComponent<Rigidbody2D>();
-            rb2d.AddForce(Vector2.one * _launchMagnitude);
+            rb2d.AddForce(direction * _launchMagnitude);
         }
     }
 }

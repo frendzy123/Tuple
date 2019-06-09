@@ -4358,7 +4358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _jellybean: {fileID: 5823098209605300969, guid: 5f40b96ec7203434b8dda6e1fa19cdb2,
     type: 3}
-  _launchMagnitude: 100
+  _launchMagnitude: 1000
   _upperAngle: 225
   _lowerAngle: 135
 --- !u!1 &1951646776
