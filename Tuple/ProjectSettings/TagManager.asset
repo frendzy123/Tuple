@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SafeCover
   - Body
+  - Jellybean
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - body_links
   - lighting
-  - 
-  - 
+  - Player
+  - PickableObject
   - 
   - 
   - 

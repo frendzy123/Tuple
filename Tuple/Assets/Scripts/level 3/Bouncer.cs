@@ -21,10 +21,6 @@ public class Bouncer : MonoBehaviour
         if (collision.gameObject.tag == "SafeCover") {
             Debug.Log(collision.contacts[0].normal);
             Vector3 reflect = Vector3.Reflect(collision.rigidbody.velocity, collision.contacts[0].normal);
-
-            if () {
-            }
-
             Debug.Log(collision.rigidbody.velocity);
         }
     }

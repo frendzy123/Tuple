@@ -60,6 +60,7 @@ public class dispense : MonoBehaviour
             GameObject tempJellybean = Instantiate(_jellybean, this.gameObject.transform.position, Quaternion.identity);
             Rigidbody2D rb2d = tempJellybean.GetComponent<Rigidbody2D>();
             rb2d.velocity = (direction * _launchMagnitude);
+            rb2d.angularVelocity = 40;
         }
     }
 }
