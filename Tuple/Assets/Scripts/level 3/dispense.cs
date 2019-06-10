@@ -39,14 +39,14 @@ public class dispense : MonoBehaviour
             this.gameObject.transform.Rotate(Vector3.forward, -0.5f);
         }
 
-        if (Random.Range(0f, 1f) > 0.99) {
+        if (Random.Range(0f, 1f) > 0.99f) {
             float xMag = 1f;
             float yMag = 1f;
             float angle = 0f;
 
             if (this.gameObject.transform.rotation.eulerAngles.z >= 180)
             {
-                // xMag = 1f;
+                 xMag = -1f;
                 // yMag = -1f;
                 angle = ((this.gameObject.transform.rotation.eulerAngles.z - 180) * Mathf.PI) / 180;
             }
@@ -56,11 +56,10 @@ public class dispense : MonoBehaviour
                 angle = ((180 - this.gameObject.transform.rotation.eulerAngles.z) * Mathf.PI) / 180;
             }
             
-            Debug.Log(angle);
-            Vector3 direction = new Vector3(xMag*Mathf.Cos(angle), yMag*Mathf.Sin(angle), 0);
+            Vector3 direction = new Vector3(xMag*Mathf.Sin(angle), yMag*Mathf.Cos(angle), 0);
             GameObject tempJellybean = Instantiate(_jellybean, this.gameObject.transform.position, Quaternion.identity);
             Rigidbody2D rb2d = tempJellybean.GetComponent<Rigidbody2D>();
-            rb2d.AddForce(direction * _launchMagnitude);
+            rb2d.velocity = (direction * _launchMagnitude);
         }
     }
 }
