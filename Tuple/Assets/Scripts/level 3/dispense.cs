@@ -8,8 +8,12 @@ public class dispense : MonoBehaviour
     public float _launchMagnitude;
     public int _upperAngle;
     public int _lowerAngle;
+    public int _spawnProbability;
+    public int _maxDelay;
+    public int _minDelay;
 
     private bool _left = false;
+    private bool _dispense = true;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +43,7 @@ public class dispense : MonoBehaviour
             this.gameObject.transform.Rotate(Vector3.forward, -0.5f);
         }
 
-        if (Random.Range(0f, 1f) > 0.99f) {
+        if (Random.Range(0, 10) > _spawnProbability && _dispense) {
             float xMag = 1f;
             float yMag = 1f;
             float angle = 0f;
@@ -61,6 +65,16 @@ public class dispense : MonoBehaviour
             Rigidbody2D rb2d = tempJellybean.GetComponent<Rigidbody2D>();
             rb2d.velocity = (direction * _launchMagnitude);
             rb2d.angularVelocity = 40;
+            _dispense = false;
+            StartCoroutine("delay");
         }
+    }
+
+    IEnumerator delay() {
+        yield return new WaitForSeconds(_maxDelay);
+        if (_maxDelay > _minDelay) {
+            _maxDelay--;
+        }
+        _dispense = true;
     }
 }
