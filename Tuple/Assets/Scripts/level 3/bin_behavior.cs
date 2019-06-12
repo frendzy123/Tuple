@@ -7,11 +7,11 @@ public class bin_behavior : MonoBehaviour
 	public GameObject head;
     public Level3Score _playerScore;
     public GameObject _jellybean;
+    public Animator _tongue;
     public float minXMag;
     public float maxXMag;
     public float minYMag;
     public float maxYMag;
-    public int _maxScore;
 
     public int _beanCount = 0;
 
@@ -35,9 +35,15 @@ public class bin_behavior : MonoBehaviour
             GrabObjectGeneral grabObject = collision.gameObject.GetComponentInChildren<GrabObjectGeneral>();
             if (grabObject._dropped)
             {
+                grabObject._dropped = false;
+                collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 _beanCount++;
-                Destroy(collision.gameObject);
+                StartCoroutine("TongueIn", collision.gameObject);
                 _playerScore._playerScore++;
+            }
+            else if (grabObject._grabbed)
+            {
+                _tongue.SetBool("open", true);
             }
         }
     }
@@ -55,5 +61,12 @@ public class bin_behavior : MonoBehaviour
             _playerScore._playerScore--;
             _beanCount--;
         }
+    }
+
+    IEnumerator TongueIn(GameObject gameObject) {
+        yield return new WaitForSeconds(1f);
+        _tongue.SetBool("open", false);
+        _tongue.SetBool("close", true);
+        Destroy(gameObject);
     }
 }
