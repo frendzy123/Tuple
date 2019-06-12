@@ -20,6 +20,10 @@ public class BodyChainColliders : MonoBehaviour
             boxColObject.tag = "Body";
             BoxCollider2D collider = boxColObject.AddComponent<BoxCollider2D>();
             boxColObject.layer = LayerMask.NameToLayer("body_links");
+            if (i == 0 || i == _srcBody.bodyControlsPoints.Count - 2)
+            {
+                boxColObject.layer = LayerMask.NameToLayer("Player");
+            }
             //collider.enabled = false;
             _bodyChainColliders.Add(collider);
         }

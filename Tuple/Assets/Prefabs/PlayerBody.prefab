@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 5883319596610755093}
   m_Layer: 0
   m_Name: BodyLine
-  m_TagString: Body
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -823,7 +823,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   xMagnitude: 9
   yMagnitude: 4
-  isInverted: 0
+  isInverted: 1
   xMinClamp: -7
   xMaxClamp: 7
   yMinClamp: -7
@@ -2512,7 +2512,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   xMagnitude: 9
   yMagnitude: 4
-  isInverted: 0
+  isInverted: 1
   xMinClamp: -7
   xMaxClamp: 7
   yMinClamp: -7

@@ -13,6 +13,7 @@ public class PlayerControls : MonoBehaviour {
     public float xMaxClamp;
     public float yMinClamp;
     public float yMaxClamp;
+    public bool grabbed = false;
 
     public SteamVR_Input_Sources hand;
 
