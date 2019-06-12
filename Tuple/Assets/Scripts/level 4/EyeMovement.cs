@@ -17,7 +17,7 @@ public class EyeMovement : MonoBehaviour
     void Update()
     {
         // Mouse Implementation
-        Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 target =  _head.transform.position - this.transform.position;
         this.gameObject.GetComponent<Rigidbody2D>().velocity = 2 * target.normalized;
     }
 
