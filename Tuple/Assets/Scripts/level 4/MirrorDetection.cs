@@ -35,7 +35,7 @@ public class MirrorDetection : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         float distance = Vector3.Distance(_mirrorHeadPosition, collision.gameObject.transform.position);
-        if (distance < 0.6) {
+        if (distance < 0.8) {
             distance = 0;
         }
         Debug.Log(distance);

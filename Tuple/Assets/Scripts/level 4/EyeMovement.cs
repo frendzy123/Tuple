@@ -16,7 +16,9 @@ public class EyeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.right = _head.transform.position - this.gameObject.transform.position;
+        // Mouse Implementation
+        Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = 2 * target.normalized;
     }
 
     //
