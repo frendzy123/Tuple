@@ -7,10 +7,14 @@ public class Level1Progress : MonoBehaviour
 {
 
     public DigitalRuby.RainMaker.RainScript2D _rainControl;
+    public Animator _transition;
     public SpriteRenderer _lightBackground;
     public SpriteRenderer _lightFlowers;
+    public SpriteRenderer _head1;
+    public SpriteRenderer _head2;
     public GameObject _umbrella;
     public GameObject _umbrellaSpawn;
+    public GameObject _circle;
     public float _rainIntensityRate;
     public float _rainChangeRate;
     public float _alphaChangeRate;
@@ -78,6 +82,10 @@ public class Level1Progress : MonoBehaviour
     {
         if (_lightBackground.color.a >= 1)
         {
+            _circle.SetActive(true);
+            _transition.SetBool("portal", true);
+            _head1.sortingOrder = 8;
+            _head2.sortingOrder = 8;
         }
         else
         {

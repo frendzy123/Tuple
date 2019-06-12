@@ -9,6 +9,8 @@ public class Level3Score : MonoBehaviour
 
     public GameObject _dispenser;
     public GameObject _spotlight;
+    public Animator _anim;
+    public GameObject _circle;
 
     // Start is called before the first frame update
     void Start()
@@ -35,5 +37,8 @@ public class Level3Score : MonoBehaviour
         {
             Destroy(jellybeans[i]);
         }
+
+        _circle.SetActive(true);
+        _anim.SetBool("portal", true);
     }
 }

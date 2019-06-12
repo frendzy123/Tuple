@@ -7,6 +7,8 @@ public class score : MonoBehaviour
     public static bool isPosTriggered;
     public static bool isNegTriggered;
     public static float playerScore;
+    public Animator _anim;
+    public GameObject _circle;
 
 //testing
     public float scorecopy;
@@ -37,7 +39,9 @@ public class score : MonoBehaviour
 //testing
 
         if (playerScore >= maxScore) {
-        	//trigger scene transition
+            //trigger scene transition
+            _circle.SetActive(true);
+            _anim.SetBool("portal", true);
         }
         else {
             if (isPosTriggered && isNegTriggered) {
