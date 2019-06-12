@@ -8,7 +8,7 @@ public class GrabObjectGeneral : MonoBehaviour
     public bool _dropped = false;
     public float _droppedTime;
 
-    private bool _grabbed = false;
+    public bool _grabbed = false;
     private Vector3 _newPosition;
     private GameObject _player;
 
