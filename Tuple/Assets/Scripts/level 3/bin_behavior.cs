@@ -36,6 +36,7 @@ public class bin_behavior : MonoBehaviour
             if (grabObject._dropped)
             {
                 grabObject._dropped = false;
+                Destroy(collision.gameObject);
                 collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 _beanCount++;
                 StartCoroutine("TongueIn", collision.gameObject);
@@ -67,6 +68,6 @@ public class bin_behavior : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _tongue.SetBool("open", false);
         _tongue.SetBool("close", true);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

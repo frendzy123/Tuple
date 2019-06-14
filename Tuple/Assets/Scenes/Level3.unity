@@ -813,6 +813,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5883319597219204377, guid: c9e3c431425a4a343a8034647874ea06,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5883319598551164731, guid: c9e3c431425a4a343a8034647874ea06,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -878,11 +883,6 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1981221506}
-    - target: {fileID: 5883319597219204377, guid: c9e3c431425a4a343a8034647874ea06,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5883319598325055438, guid: c9e3c431425a4a343a8034647874ea06,
         type: 3}
       propertyPath: m_Layer
@@ -1398,6 +1398,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneTransition
       objectReference: {fileID: 0}
+    - target: {fileID: 2455931832884462501, guid: 95fd5c9d0978ce149bb2578dc39fc12c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b17d7249cf9dda8488f8bd64c02bb3df, type: 2}
     - target: {fileID: 2455931832884462500, guid: 95fd5c9d0978ce149bb2578dc39fc12c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1453,11 +1458,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2455931832884462501, guid: 95fd5c9d0978ce149bb2578dc39fc12c,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b17d7249cf9dda8488f8bd64c02bb3df, type: 2}
     - target: {fileID: 2455931832791872403, guid: 95fd5c9d0978ce149bb2578dc39fc12c,
         type: 3}
       propertyPath: m_Name
@@ -1481,7 +1481,7 @@ PrefabInstance:
     - target: {fileID: 2455931832210022845, guid: 95fd5c9d0978ce149bb2578dc39fc12c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2455931832210022842, guid: 95fd5c9d0978ce149bb2578dc39fc12c,
         type: 3}
@@ -2068,8 +2068,8 @@ MonoBehaviour:
   _upperAngle: 225
   _lowerAngle: 135
   _spawnProbability: 8
-  _maxDelay: 6
-  _minDelay: 2
+  _maxDelay: 7
+  _minDelay: 4
 --- !u!1 &1934675252 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2127522539470785758, guid: 16c72585083144145b76b9ebc27dee3a,
